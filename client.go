@@ -64,3 +64,10 @@ func (c *Conn) Receive() (*Message, error) {
 	}
 	return &rv, nil
 }
+
+// Disconnect
+func (c *Conn) Disconnect() {
+	if c != nil && c.conn != nil {
+		c.conn.Close()
+	}
+}
